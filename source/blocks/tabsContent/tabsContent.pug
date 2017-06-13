@@ -1,0 +1,20 @@
+.tabsContent__wrapper
+    .tabsContent__borderTab
+        .tabsContent__tab.active( data-tab="tabOne")
+            .tabsContent__tabName GENRES
+        .tabsContent__tab( data-tab="tabTwo")
+            .tabsContent__tabName MOODS
+        .tabsContent__tab( data-tab="tabThree")
+            .tabsContent__tabName INSTRUMENTS
+
+    .tabsContent.tabOne.active
+        +tabsContent('tabsContent', 'ROCK', 'CORPORATE', 'AMBIENT', 'POP', 'HAPPY', 'CINEMATIC',
+        'ACOUSTIC', 'PIANO', 'FUNK&JAZZ', 'PERCUSSION')
+
+    .tabsContent.tabTwo
+        +tabsContent('tabsContent', 'ROCK_2', 'CORPORATE', 'AMBIENT', 'POP', 'HAPPY', 'CINEMATIC',
+        'ACOUSTIC', 'PIANO', 'FUNK&JAZZ', 'PERCUSSION')
+
+    .tabsContent.tabThree
+        +tabsContent('tabsContent', 'ROCK_3', 'CORPORATE', 'AMBIENT', 'POP', 'HAPPY', 'CINEMATIC',
+        'ACOUSTIC', 'PIANO', 'FUNK&JAZZ', 'PERCUSSION')

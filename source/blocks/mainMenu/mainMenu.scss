@@ -1,16 +1,19 @@
 .mainMenu {
   text-align: right;
+  font-size: 17px;
+
 
   &__wrapper {
-    @include ColBlock10(10, 8);
-    vertical-align: middle;
+    width: 100%;
+    text-transform: uppercase;
   }
 
   &__link {
-    font-size: 17px;
     text-align: center;
     font-weight: 300;
-    &:after{
+    display: none;
+
+    &:after {
       content: "";
       display: inline-block;
       width: 2px;
@@ -18,8 +21,8 @@
       vertical-align: middle;
       background: $primaryColor;
 
-      &:last-child{
-        &:after{
+      &:last-child {
+        &:after {
           display: none;
         }
       }
@@ -27,7 +30,32 @@
 
     span {
       color: #fff;
-      padding: 0 21px;
+      margin: 0 21px;
+    }
+
+    &:hover {
+      span {
+        color: $primaryColor;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &--mini {
+    font-size: 14px;
+
+    span {
+      margin: 0 24px;
     }
   }
 }
+
+.mobileMenu {
+  margin-right:24px ;
+  background-image: url("/images/menu.png");
+  background-size: contain;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+}
+

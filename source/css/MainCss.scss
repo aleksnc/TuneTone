@@ -3,11 +3,14 @@
 @import "variables";
 @import "global";
 
+@import "../blocks/followBlock/followBlock";
 @import "../blocks/footer/footer";
 @import "../blocks/headerBlock/headerBlock";
+@import "../blocks/indexTitle/indexTitle";
 @import "../blocks/mainLogo/mainLogo";
 @import "../blocks/mainMenu/mainMenu";
-@import "../blocks/searchBlock/searchBlock";
+@import "../blocks/inputSend/inputSend";
+@import "../blocks/tabsContent/tabsContent";
 
 .allContent{
   max-width: 1000px;
@@ -18,6 +21,6 @@
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100%;
-    padding-bottom: 30px;
+    padding-bottom: 150px;
   }
 }

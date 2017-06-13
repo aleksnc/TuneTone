@@ -1,10 +1,36 @@
 .footer{
   max-width: 1000px;
   margin: 0 auto;
-
-
+  font-size:  0;
+  text-align: right;
   &__wrapper{
     position: relative;
-    margin-top: -30px;
+    margin-top: -124px;
   }
+
+  &__logo{
+    @include ColBlock10(10,2);
+    vertical-align: middle;
+    padding:0  11px;
+    font-size: 9.5px;
+  }
+
+  &__nav{
+    @include ColBlock10(10, 8);
+    vertical-align: middle;
+  }
+
+  &__subscribe{
+    @include ColBlock10(10, 6);
+    vertical-align: middle;
+    margin-top: 12px;
+  }
+
+  &__follow{
+    @include ColBlock10(10, 3);
+    vertical-align: middle;
+    margin-top: 12px;
+  }
+
+
 }

@@ -1,7 +1,23 @@
-mixin mainMenu(name, ...items)
+mixin mainMenu(name,prefix, ...items)
+    if prefix != null
+        div(class=name + '__wrapper')
+            nav(class=name +' '+ name+prefix)
+                each item in items
+                    a( href="#" class=name + '__link')
+                        span&attributes(attributes)= item
+    else
+        div(class=name + '__wrapper ')
+            nav(class=name)
+                a( href="#" class='mobileMenu')
+                each item in items
+                    a( href="#" class=name + '__link')
+                        span&attributes(attributes)= item
 
-    div(class=name + '__wrapper')
-        nav(class=name)
-            each item in items
-                a( href="#" class=name + '__link')
-                    span&attributes(attributes)= item
+
+
+mixin tabsContent(name, ...items)
+    each item, index in items
+        div(class=name + '__linkWrapper')
+            a( href="#" class=name + '__link')
+                img(class=name + '__img' src='/images/tempImg/'+(index+1)+'.jpg')
+                span(class=name + '__name')&attributes(attributes)= item

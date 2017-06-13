@@ -1,8 +1,7 @@
 .mainLogo {
 
   &__wrapper {
-    @include ColBlock10(10,2);
-    vertical-align: middle;
+    width: 100%;
   }
 
   &__image {
@@ -10,7 +9,7 @@
   }
 
   &__slogan {
-    font-size: 11px;
+    font-size: 1em;
     color: $primaryColor;
     display: inline-block;
     width: 100%;

@@ -1,3 +1,5 @@
+include mixin.pug
+
 doctype !
 
 html(lang="ru")
@@ -5,10 +7,12 @@ html(lang="ru")
         title Tune-tone: Royalty free music.
         meta( charset="UTF-8")
         meta( name="viewport" content="width=device-width, initial-scale=1.0")
-        //script( src="jquery-2.2.3.min.js" rel="script")
         link( rel="stylesheet" href="css/MainCss.css")
     body
         block content
 
         footer
             include ../blocks/footer/footer.pug
+
+    script(rel="script" src="script/jquery-2.2.3.min.js")
+    script(rel="script" src="script/mainJS.js")

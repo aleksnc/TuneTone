@@ -1,4 +1,17 @@
 @mixin ColBlock10($maxCol,$contCol){
+  position: relative;
   display: inline-block;
   width: (100%/$maxCol)*$contCol;
+}
+
+
+@mixin middleContent(){
+  vertical-align: middle;
+  &:after{
+    content: "";
+    height: 100%;
+    display: inline-block;
+    width: 0;
+    vertical-align: middle;
+  }
 }

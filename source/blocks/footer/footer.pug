@@ -1,2 +1,10 @@
 .footer__wrapper
-    .footer test
+    .footer
+        .footer__logo
+            include ../mainLogo/mainLogo.pug
+        .footer__nav
+            +mainMenu('mainMenu','--mini', 'ABOUT', 'NEW MUSIC', 'BROWSE', 'LICENSE', 'BLOG', 'FAQ', 'contact us')
+            .footer__subscribe
+                include ../inputSend/subscribeBlock.pug
+            .footer__follow
+                include ../followBlock/followBlock.pug

@@ -1,0 +1,26 @@
+.indexTitle{
+  text-align: center;
+  color: $primaryColor;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 20px;
+
+  @media (min-width: 1024px) {
+    font-size: 27px;
+  }
+
+  &__wrapper{
+    margin: 18px 0;
+    width: 100%;
+    padding: 0 10px;
+
+    @media (min-width: 1024px) {
+      margin: 48px 0;
+      padding: 0;
+    }
+  }
+  
+  &__link{
+    color: #fff;
+  }
+}

@@ -1,0 +1,33 @@
+.followBlock {
+  &__wrapper {
+  }
+
+  &__title {
+    color: #fff;
+    font-size: 14px;
+    text-transform: uppercase;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  &__link {
+    font-size: 0;
+    width: 25px;
+    height: 25px;
+    vertical-align: middle;
+    display: inline-block;
+    margin-left: 12px;
+
+    &--face {
+    background-image: url("/images/face.png");
+    }
+
+    &--inst {
+      background-image: url("/images/inst.png");
+    }
+
+    &--ytube{
+      background-image: url("/images/ytube.png");
+    }
+  }
+}

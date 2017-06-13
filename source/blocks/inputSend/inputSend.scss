@@ -1,37 +1,69 @@
 
-.searchBlock {
+.inputSend {
   display: inline-block;
-  width: 942px;
-  height: 60px;
+  width: calc(100% - 38px);
+  height: 40px;
   vertical-align: top;
   border: 2px solid $primaryColor;
+  font-size: 16px;
+
+  @media (min-width: 1024px){
+    font-size: 26px;
+    height: 60px;
+    width: calc(100% - 58px);
+  }
 
   &__wrapper {
-    margin-top: 24px;
     font-size: 0;
+    padding: 0 10px;
+
+    @media (min-width: 1024px){
+      padding: 0;
+    }
   }
 
   &__input {
-    font-size: 26px;
     color: $primaryColor;
     text-align: center;
     width: 100%;
     height: 100%;
     border: none;
+    font-size: 1em;
     background-color: transparent;
   }
 
   &__button {
     vertical-align: top;
     display: inline-block;
-    width: 58px;
-    height: 60px;
+    width: 38px;
+    height: 40px;
     background-image: url("../images/search_icon.png");
     background-repeat: no-repeat;
     background-position: center;
+    background-size: 27px;
     background-color: $primaryColor;
     border: 0;
     cursor: pointer;
+
+    @media (min-width: 1024px){
+      width: 58px;
+      height: 60px;
+      background-size: auto;
+    }
+
+    &--subscribe{
+      background-image: none;
+      color: $fourColor;
+      width: 100px;
+      height: 32px;
+      font-size: 13px;
+    }
+  }
+
+  &--subscribe{
+    width: calc(100% - 100px);
+    height: 32px;
+    font-size: 13px;
   }
 }
 
