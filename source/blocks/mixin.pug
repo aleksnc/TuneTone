@@ -1,0 +1,7 @@
+mixin mainMenu(name, ...items)
+
+    div(class=name + '__wrapper')
+        nav(class=name)
+            each item in items
+                a( href="#" class=name + '__link')
+                    span&attributes(attributes)= item

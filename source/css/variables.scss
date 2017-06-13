@@ -1,0 +1,70 @@
+//@font-face{
+//
+//  font-family: 'Poppins';
+//
+//  src: url('../fonts/Poppins-Bold.ttf');
+//  src: url('../fonts/Poppins-Light.ttf');
+//  src: url('../fonts/Poppins-Medium.ttf');
+//  src: url('../fonts/Poppins-Regular.ttf');
+//  src: url('../fonts/Poppins-SemiBold.ttf');
+//
+//  font-weight: normal;
+//
+//  font-style: normal;
+//
+//}
+
+@font-face{
+  font-family: 'Poppins';
+
+  src: url('../fonts/Poppins-Light.ttf');
+
+  font-weight: 100;
+
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'Poppins';
+
+  src: url('../fonts/Poppins-Medium.ttf');
+
+  font-weight: 300;
+
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'Poppins';
+
+  src: url('../fonts/Poppins-Regular.ttf');
+
+  font-weight: normal;
+
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'Poppins';
+
+  src: url('../fonts/Poppins-SemiBold.ttf');
+
+  font-weight: 500;
+
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'Poppins';
+
+  src: url('../fonts/Poppins-Bold.ttf');
+
+  font-weight: bold;
+
+  font-style: normal;
+}
+
+
+$mainFont: 'Poppins';
+
+$primaryColor: #3bd9a3;

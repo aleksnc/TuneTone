@@ -1,0 +1,4 @@
+@mixin ColBlock10($maxCol,$contCol){
+  display: inline-block;
+  width: (100%/$maxCol)*$contCol;
+}

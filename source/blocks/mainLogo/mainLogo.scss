@@ -1,0 +1,22 @@
+.mainLogo {
+
+  &__wrapper {
+    @include ColBlock10(10,2);
+    vertical-align: middle;
+  }
+
+  &__image {
+    width: 100%;
+  }
+
+  &__slogan {
+    font-size: 11px;
+    color: $primaryColor;
+    display: inline-block;
+    width: 100%;
+    font-weight: 300;
+    text-align: right;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+}

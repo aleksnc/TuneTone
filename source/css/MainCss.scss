@@ -1,0 +1,23 @@
+@import "../blocks/mixin.scss";
+
+@import "variables";
+@import "global";
+
+@import "../blocks/footer/footer";
+@import "../blocks/headerBlock/headerBlock";
+@import "../blocks/mainLogo/mainLogo";
+@import "../blocks/mainMenu/mainMenu";
+@import "../blocks/searchBlock/searchBlock";
+
+.allContent{
+  max-width: 1000px;
+  margin: 0 auto;
+
+  &__wrapper{
+    background-image: url(../images/BgSite.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100%;
+    padding-bottom: 30px;
+  }
+}
