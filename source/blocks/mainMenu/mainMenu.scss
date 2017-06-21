@@ -1,7 +1,10 @@
 .mainMenu {
-  text-align: right;
+  text-align: left;
   font-size: 17px;
 
+  @media (min-width: 768px) {
+    text-align: right;
+  }
 
   &__wrapper {
     width: 100%;
@@ -9,28 +12,14 @@
   }
 
   &__link {
-    text-align: center;
+    text-align: left;
     font-weight: 300;
     display: none;
 
-    &:after {
-      content: "";
-      display: inline-block;
-      width: 2px;
-      height: 16px;
-      vertical-align: middle;
-      background: $primaryColor;
-
-      &:last-child {
-        &:after {
-          display: none;
-        }
-      }
-    }
-
     span {
       color: #fff;
-      margin: 0 21px;
+      display: inline-block;
+      margin: 5px 0;
     }
 
     &:hover {
@@ -39,23 +28,70 @@
         text-decoration: underline;
       }
     }
+
+    @media (min-width: 768px) {
+      display: inline-block;
+      text-align: center;
+
+      span {
+        margin: 0 21px;
+      }
+
+      &:after {
+        content: "";
+        display: inline-block;
+        width: 2px;
+        height: 16px;
+        vertical-align: middle;
+        background: $primaryColor;
+
+        &:last-child {
+          &:after {
+            display: none;
+          }
+        }
+      }
+
+    }
+
+    &.active {
+      display: block;
+      min-width: 80%;
+      border-bottom: 2px solid $oneColor;
+
+      &:last-child{
+        border: none;
+      }
+    }
   }
 
   &--mini {
     font-size: 14px;
 
     span {
-      margin: 0 24px;
+      margin: 0 10px;
+    }
+
+    @media (min-width: 1024px) {
+      span {
+        margin: 0 24px;
+      }
     }
   }
 }
 
 .mobileMenu {
-  margin-right:24px ;
+  margin-right: 24px;
   background-image: url("/images/menu.png");
   background-size: contain;
   display: inline-block;
-  width: 40px;
+  width: 100%;
+  min-width: 40px;
   height: 40px;
+  background-repeat: no-repeat;
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 }
 

@@ -8,7 +8,7 @@ mixin mainMenu(name,prefix, ...items)
     else
         div(class=name + '__wrapper ')
             nav(class=name)
-                a( href="#" class='mobileMenu')
+                a( href="#" class='mobileMenu js_mobileMenu')
                 each item in items
                     a( href="#" class=name + '__link')
                         span&attributes(attributes)= item

@@ -9,7 +9,15 @@ function mainTab() {
     })
 }
 
+function mobileMenu(){
+    $('.js_mobileMenu').click(function(){
+       $(this).siblings('.mainMenu__link').toggleClass('active');
+        $('.headerBlock__nav').toggleClass('active');
+    })
+}
+
 
 $(document).ready(function () {
     mainTab()
-})
+    mobileMenu()
+});

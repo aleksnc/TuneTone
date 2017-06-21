@@ -51,13 +51,29 @@
 
   &__tabName{
     font-weight: bold;
-    font-size: 28px;
+    font-size: 20px;
+
+    @media (min-width: 425px) {
+      font-size: 28px;
+    }
   }
 
   &__linkWrapper{
-    @include ColBlock10(10,2);
+    @include ColBlock10(10,10);
     text-align: center;
     margin-bottom: 12px;
+
+    @media (min-width: 425px) {
+      @include ColBlock10(10,5);
+    }
+
+    @media (min-width: 768px) {
+      @include ColBlock10(10,3.3);
+    }
+
+    @media (min-width: 1024px) {
+      @include ColBlock10(10,2);
+    }
   }
 
   &__link{
