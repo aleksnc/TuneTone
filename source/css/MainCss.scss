@@ -12,6 +12,10 @@
 @import "../blocks/inputSend/inputSend";
 @import "../blocks/tabsContent/tabsContent";
 
+
+@import "../blocks/SingleResult/SingleResult";
+
+
 .allContent{
   max-width: 1000px;
   margin: 0 auto;
@@ -20,6 +24,7 @@
     background-image: url(../images/BgSite.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     min-height: 100%;
     padding-bottom: 150px;
   }

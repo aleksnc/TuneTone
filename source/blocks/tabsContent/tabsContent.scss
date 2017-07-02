@@ -4,7 +4,6 @@
   padding: 12px 10px 0;
   display: none;
 
-
   &.active{
     display: block;
   }
@@ -82,7 +81,7 @@
     width: 188px;
     height: 188px;
 
-    &:after{
+/*    &:after{
       content: '';
       top: 0;
       opacity: 0.8;
@@ -92,12 +91,12 @@
       height: 100%;
       background: $threeColor;
       transition: opacity 0.8s;
-    }
+    }*/
 
     &:before{
       content: '';
       top: 0;
-      opacity: 0.3;
+      opacity: 0.73;
       z-index: 2;
       position: absolute;
       display: block;
@@ -107,16 +106,14 @@
       transition: opacity 0.8s;
     }
 
-
-
     &:hover{
-      &:after{
+/*      &:after{
         opacity: 0.8;
         background: $secondColor;
         transition: opacity 0.8s;
-      }
+      }*/
       &:before{
-        opacity:0;
+        opacity:0.3;
         transition: opacity 0.8s;
       }
 

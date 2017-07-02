@@ -1,0 +1,25 @@
+{
+  "playList": [
+    {
+      "id": 1,
+      "name": "KUBA",
+      "title": "Cat-Mouse",
+      "realTitle": "3.mp3",
+      "img": "kuba.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Alex Clare",
+      "title": "Too close",
+      "realTitle": "1.mp3",
+      "img": "actc.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Tracy T. Bush",
+      "title": "War Craft III",
+      "realTitle": "2.mp3",
+      "img": "wc.jpg"
+    }
+  ]
+}

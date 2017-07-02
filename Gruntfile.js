@@ -82,7 +82,7 @@ module.exports = function(grunt){
       js: {
         files: [{
           cwd: 'source/script',
-          src: '**/*.js',
+          src: '**/*.{js,json}',
           dest: 'dest/script',
           expand: true,
         }]
@@ -90,7 +90,7 @@ module.exports = function(grunt){
     },
     watch: {
       js: {
-        files: ['source/script/**/*.js'],
+        files: ['source/script/**/*.{js,json}'],
         tasks: ['copy:js'],
       },
       css: {
