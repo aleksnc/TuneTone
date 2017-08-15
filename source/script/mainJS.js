@@ -21,9 +21,13 @@ function mobileMenu() {
 }
 
 function toggleBtn() {
+$('.toggleBtn_js').each(function(indx){
+    $(this).data('play', indx);
+})
+
 
     $('.toggleBtn_js').click(function () {
-        var id = $(this).data('id');
+        var id = $(this).data('play');
         console.log(id);
 
         var leng = perem.length;
@@ -55,94 +59,51 @@ function musicWave() {
 
     $(function () {
         $.getJSON('script/playList.json', function (data) {
-            for (var i = 0; i < data.playList.length; i++) {
-                //$('.Singleresult__wrapper').append('<tr><td>' + data.playList[i].id + '</td><td>' + data.playList[i].name +
-                //    '</td><td>' + data.playList[i].title +   '</td><td>' + data.playList[i].realTitle + '</td><tr>');
-
-                //    $('.Singleresult.parent').clone().removeClass('parent').appendTo(".Singleresult__wrapper");
-                console.log(i);
-
-                eq = i;
-
-                //   $('.Singleresult:eq(' + eq + ')').find('#waveform').removeAttr('id').attr('id', '#waveform' + eq);
-
-                perem[i] = WaveSurfer.create({
-                    container: '#waveform' + eq,
-                    waveColor: '#828082',
-                    progressColor: '#3bd9a3',
-                    height: 80
-                })
-                perem[i].load('music/' + data.playList[i].realTitle);
-
-                $('.Singleresult:eq(' + eq + ')')
-                    .find('.SingleResult__img').attr('src', 'images/imgSingle/' + data.playList[i].img)
-                    .find('.SingleResult__artist').empty().html(data.playList[i].name)
-                    .find('.SingleResult__title').empty().html(data.playList[i].title)
-
-            }
-        });
-    });
-
-}
-
-
-function musicWave() {
-    $('.Singleresult').css(
-        {
-            'height': 0,
-            'overflow': 'hidden'
-        });
-
-    $(function () {
-        $.getJSON('script/playList.json', function (data) {
-            // for (var i = 0; i < data.playList.length; i++) {
-
             $('.SingleResult').each(function (i) {
-                //$('.Singleresult__wrapper').append('<tr><td>' + data.playList[i].id + '</td><td>' + data.playList[i].name +
-                //    '</td><td>' + data.playList[i].title +   '</td><td>' + data.playList[i].realTitle + '</td><tr>');
 
-                //    $('.Singleresult.parent').clone().removeClass('parent').appendTo(".Singleresult__wrapper");
-                console.log(i);
+                var eqId = $(this).find('.toggleBtn_js').data("id");
 
-                eq = i;
-
-                //   $('.Singleresult:eq(' + eq + ')').find('#waveform').removeAttr('id').attr('id', '#waveform' + eq);
-
+                // eq = i;
                 perem[i] = WaveSurfer.create({
-                    container: '#waveform' + eq,
+                    container: '#waveform' + eqId,
                     waveColor: '#828082',
                     progressColor: '#3bd9a3',
                     height: 80
                 })
-                perem[i].load('music/' + data.playList[i].realTitle);
+                console.log("eqId" + eqId);
+                console.log(data.playList[eqId].realTitle);
+                perem[i].load('music/' + data.playList[eqId].realTitle);
 
+                $('.Singleresult:eq(' + i + ')').find('.SingleResult__img img')
+                    .attr('src', 'images/imgSingle/' + data.playList[eqId].img);
 
-                // console.log('eq:'+eq);
+                $('.Singleresult:eq(' + i + ')').find('.SingleResult__artist')
+                    .empty()
+                    .html(data.playList[eqId].name);
 
-                $('.Singleresult:eq(' + eq + ')').find('.SingleResult__img img')
-                        .attr('src', 'images/imgSingle/' + data.playList[i].img);
+                $('.Singleresult:eq(' + i + ')').find('.SingleResult__title')
+                    .empty()
+                    .html(data.playList[eqId].title);
 
-                $('.Singleresult:eq(' + eq + ')').find('.SingleResult__artist')
-                        .empty()
-                        .html(data.playList[i].name);
-
-                $('.Singleresult:eq(' + eq + ')').find('.SingleResult__title')
-                        .empty()
-                        .html(data.playList[i].title);
-
-                $('.Singleresult:eq(' + eq + ')').find('.SingleResult__time').empty();
+                $('.Singleresult:eq(' + i + ')').find('.SingleResult__time').empty();
 
             })
+
         });
     });
-
 }
 
-
 function musicPlay() {
+    var i=0;
+    var n=0;
     $('.SingleResult .waveform').on('DOMSubtreeModified', 'canvas', function (event) {
-        var indx = $(this).parents('.SingleResult').index();
+        i++;
+        if(i%4==0){
+            n++;
+        }
+        var indx = n;
 
+     //   indx =0;
         perem[indx].on('ready', function () {
             var allTimeSec = perem[indx].getDuration();
 
@@ -156,7 +117,6 @@ function musicPlay() {
             if (allSec < 10) {
                 allSec = '0' + allSec;
             }
-
 
             $('.SingleResult__time:eq(' + indx + ')')
                 .empty()
@@ -172,7 +132,6 @@ function musicPlay() {
 
         perem[indx].on('audioprocess', function () {
             var left = $('.SingleResult:eq(' + indx + ') wave').find('wave').css('width');
-            console.log(left);
 
             var CurrentTimeSec = perem[indx].getCurrentTime();
 
@@ -199,6 +158,25 @@ function musicPlay() {
 
 }
 
+function singlePageGET() {
+    var path = window.location.pathname.split("/");
+    var pathName = path[path.length - 1];
+    if (pathName == 'SinglePage.html') {
+        var getId = window.location.search.substring(1);
+        var dataId = getId.split("=")[1];
+        var imgId = parseInt(dataId) + 1;
+
+        $.getJSON('script/playList.json', function (data) {
+            $(".singleHeader__img").attr('src', '/images/single' + imgId + '.jpg');
+            $(".singleHeader__artis")
+                .empty()
+                .html(data.playList[dataId].name);
+            $(".singleHeader__soundName")
+                .empty()
+                .html(data.playList[dataId].title);
+        })
+    }
+}
 
 $(document).ready(function () {
     musicPlay()
@@ -206,6 +184,6 @@ $(document).ready(function () {
     toggleBtn()
     mainTab()
     mobileMenu()
-
+    singlePageGET()
 });
 

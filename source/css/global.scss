@@ -23,9 +23,10 @@ ul, ol, li {
 .btn {
   background: transparent;
   border: none;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   outline: none;
+  cursor: pointer;
 
   &__wrapper {
     display: inline-block;
@@ -53,4 +54,33 @@ ul, ol, li {
       background-image: url(../images/play.png);
     }
   }
+
+  &--download{
+    padding: 13px;
+    background-image: url("../images/download.png");
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &--add{
+    padding: 13px;
+    background-image: url("../images/add.png");
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &--basket{
+    padding: 0;
+    padding-top: 30px;
+    background-image: url(../images/cart.png);
+    display: inline-block;
+    vertical-align: middle;
+    background-size: 26px;
+
+    span{
+      color: $oneColor;
+      font-size: 12px;
+    }
+  }
+
 }

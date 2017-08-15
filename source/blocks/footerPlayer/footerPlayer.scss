@@ -1,5 +1,4 @@
-.SingleResult {
-  margin: 10px 0;
+.footerPlayer {
   display: flex;
   align-items: center;
 
@@ -10,6 +9,11 @@
   &__wrapper {
     position: relative;
     z-index: 2;
+    padding: 10px 25px;
+    background: #000;
+    margin: 0 auto;
+    max-width: 1000px;
+
   }
 
   &__img {
@@ -18,7 +22,7 @@
 
       @media (min-width: 1024px) {
         display: inline-block;
-        width: 90px;
+        width: 52px;
         vertical-align: middle;
       }
     }
@@ -33,25 +37,38 @@
 
   &__artist {
     color: #fff;
-    display: block;
+    display: inline-block;
   }
 
   &__title {
     color: #fff;
-    display: block;
+    display: inline-block;
   }
 
   &__nav {
 
   }
 
-  &__wave {
+  &__line {
     position: relative;
     display: inline-block;
     width: 100%;
-    max-width: 390px;
-    max-height: 80px;
+    max-width: 576px;
+    color:#fff;
     vertical-align: middle;
+    padding-right: 20px;
+  }
+
+  &__timeLine{
+    background: #fff;
+    height: 2px;
+    width: 100%;
+
+    .progress{
+      background-color: $oneColor;
+      width: 50%;
+      height: 2px;
+    }
   }
 
   &__time {

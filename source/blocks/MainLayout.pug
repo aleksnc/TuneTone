@@ -9,7 +9,11 @@ html(lang="ru")
         meta( name="viewport" content="width=device-width, initial-scale=1.0")
         link( rel="stylesheet" href="css/MainCss.css")
     body
-        block content
+        .allContent__wrapper
+            .allContent
+                include headerBlock/headerBlock.pug
+                include inputSend/inputSend.pug
+                block content
 
         footer
             include ../blocks/footer/footer.pug

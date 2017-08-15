@@ -12,6 +12,13 @@ mixin mainMenu(name,prefix, ...items)
                 each item in items
                     a( href="#" class=name + '__link')
                         span&attributes(attributes)= item
+            div(class=name+'__signIn')
+                div(class=name+'__userName') User Name
+                div(class=name+'__img')
+                    img(src="images/Users/mini200.jpg")
+                a( class=name+'__login' href="#") Login
+
+
 
 
 

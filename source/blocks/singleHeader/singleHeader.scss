@@ -1,0 +1,60 @@
+.singleHeader{
+  position: relative;
+
+  &__wrapper {
+    margin-top: 20px;
+  }
+
+  &__img  {
+    position: absolute;
+    left: calc(50% - 960px);
+  }
+
+  &__name {
+    max-height: 326px;
+    height: 100%;
+    color: #fff;
+    font-size: 33px;
+    
+    div{
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1.2;
+    }
+
+    &:after{
+      content: "";
+      height: 100%;
+      display:inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  &__artist{
+    display: block;
+  }
+
+  &__soundName{
+    display: block;
+  }
+
+  &__single{
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+
+  }
+
+  &__nav {
+
+  }
+
+  &__listInfo {
+
+  }
+
+  &__list {
+
+  }
+
+}
