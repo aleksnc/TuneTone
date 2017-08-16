@@ -2,13 +2,20 @@
     .footerPlayer
 
         .btn__wrapper
-            button.btn.btn--play.toggleBtn_js(data-id="0") Play
+            button.btn.btn--back.footerBack_js(data-id="0")
+
+        .btn__wrapper
+            button.btn.btn--play.footerPlay_js(data-id="0") Play
+
+        .btn__wrapper
+            button.btn.btn--next.footerNext_js(data-id="0")
 
         .footerPlayer__time 00:00
 
         .footerPlayer__line
             .footerPlayer__name
-                a(href='/SinglePage.html?id=0').footerPlayer__artist No name -
+                a(href='/SinglePage.html?id=0').footerPlayer__artist No name
+                span  :
                 a(href='/SinglePage.html?id=0').footerPlayer__title No name
 
             .footerPlayer__timeLine

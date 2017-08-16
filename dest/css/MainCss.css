@@ -64,6 +64,20 @@ ul, ol, li {
     background-image: url(../images/play.png); }
     .btn--play.active {
       background-image: url(../images/pause.png); }
+  .btn--back {
+    font-size: 0;
+    width: 36px;
+    height: 36px;
+    background-image: url(../images/back.png);
+    background-size: 18px;
+    background-position: 13px center; }
+  .btn--next {
+    font-size: 0;
+    width: 36px;
+    height: 36px;
+    background-image: url(../images/next.png);
+    background-size: 18px;
+    background-position: 3px center; }
   .btn--pause {
     font-size: 0;
     width: 36px;
@@ -91,6 +105,39 @@ ul, ol, li {
     .btn--basket span {
       color: #3bd9a3;
       font-size: 12px; }
+
+.aboutSingle {
+  color: #fff;
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+  position: relative; }
+  .aboutSingle__wrapper {
+    font-size: 0;
+    position: relative; }
+    .aboutSingle__wrapper:before {
+      content: "";
+      position: absolute;
+      width: 100vw;
+      left: calc(50% - 50vw);
+      height: 100%;
+      background: #0f1012; }
+  .aboutSingle__info {
+    margin-bottom: 6px; }
+  .aboutSingle__listTitle {
+    font-size: 14px;
+    display: inline-block;
+    width: 100%;
+    max-width: 130px;
+    text-align: right;
+    padding-right: 10px;
+    vertical-align: top; }
+  .aboutSingle__listContent {
+    font-size: 14px;
+    display: inline-block;
+    width: 100%;
+    max-width: calc(100% - 130px);
+    vertical-align: top; }
 
 .followBlock__title {
   color: #fff;
@@ -210,7 +257,8 @@ ul, ol, li {
     padding: 10px 25px;
     background: #000;
     margin: 0 auto;
-    max-width: 1000px; }
+    max-width: 1000px;
+    display: none; }
   .footerPlayer__img img {
     max-width: 90px; }
     @media (min-width: 1024px) {
@@ -721,8 +769,14 @@ input[type="text"]::placeholder {
     display: inline-block;
     width: 100%;
     max-width: 390px;
-    max-height: 80px;
+    max-height: 100px;
     vertical-align: middle; }
+    .SingleResult__wave--header {
+      max-width: 740px; }
+      .SingleResult__wave--header canvas {
+        height: 200px !important; }
+      .SingleResult__wave--header wave {
+        height: 100px !important; }
   .SingleResult__time {
     display: inline-block;
     padding: 0 20px;
@@ -778,19 +832,19 @@ input[type="text"]::placeholder {
     position: absolute;
     left: calc(50% - 960px); }
   .singleHeader__name {
-    max-height: 326px;
+    max-height: 220px;
     height: 100%;
     color: #fff;
     font-size: 33px; }
     .singleHeader__name div {
       display: inline-block;
-      vertical-align: middle;
+      vertical-align: bottom;
       line-height: 1.2; }
     .singleHeader__name:after {
       content: "";
       height: 100%;
       display: inline-block;
-      vertical-align: middle; }
+      vertical-align: bottom; }
   .singleHeader__artist {
     display: block; }
   .singleHeader__soundName {

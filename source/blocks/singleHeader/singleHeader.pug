@@ -8,24 +8,23 @@
                 span.singleHeader__soundName No name
         .singleHeader__nav
             .SingleResult
-                a(href='#').SingleResult__img
-                    img(src="images/imgSingle/no.jpg")
-
-                .SingleResult__name
-                    a(href='#').SingleResult__artist No name
-                    a(href='#').SingleResult__title No name
+                //.btn__wrapper
+                //    button.btn.btn--back.backBtn_js(data-id="3")
 
                 .btn__wrapper
                     button.btn.btn--play.toggleBtn_js(data-id="3") Play
 
-                .SingleResult__wave
+                //.btn__wrapper
+                //    button.btn.btn--next.nextBtn_js(data-id="3")
+
+                .SingleResult__buttons
+                    button.btn.btn--download
+                    a(href="#").btn.btn--basket
+                        span 246$
+                    a(href="#").btn.btn--add
+
+                .SingleResult__wave.SingleResult__wave--header
                     #waveform3.waveform
                     .SingleResult__timePassed 00:00
 
-                .SingleResult__time 00:00
-
-                .SingleResult__tag
-                    a(href='#') Industrial
-                    a(href='#') mix
-                    a(href='#') TaG
-
+                .SingleResult__time(style="display: none;")

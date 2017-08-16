@@ -44,6 +44,24 @@ ul, ol, li {
       }
     }
 
+  &--back{
+    font-size: 0;
+    width: 36px;
+    height: 36px;
+    background-image: url(../images/back.png);
+    background-size: 18px;
+    background-position: 13px center;
+  }
+
+  &--next{
+    font-size: 0;
+    width: 36px;
+    height: 36px;
+    background-image: url(../images/next.png);
+    background-size: 18px;
+    background-position: 3px center;
+  }
+
   &--pause{
     font-size: 0;
     width: 36px;

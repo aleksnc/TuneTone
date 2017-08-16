@@ -50,8 +50,20 @@
     display: inline-block;
     width: 100%;
     max-width: 390px;
-    max-height: 80px;
+    max-height: 100px;
     vertical-align: middle;
+
+    &--header{
+      max-width: 740px;
+
+      canvas{
+        height: 200px!important;
+      }
+
+      wave{
+        height: 100px !important;
+      }
+    }
   }
 
   &__time {

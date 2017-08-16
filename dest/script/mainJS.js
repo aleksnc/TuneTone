@@ -2,6 +2,47 @@ var eq;
 var perem = [];
 
 
+
+function footerPlay(id, indx){
+    $.getJSON('script/playList.json', function (data) {
+        var name =data.playList[id].name;
+        var title =data.playList[id].title;
+        var img =data.playList[id].img;
+
+        var allTimeSec = perem[indx].getDuration();
+
+        console.log(allTimeSec);
+
+        var allMinute = Math.floor(allTimeSec / 60);
+        var allSec = Math.floor(allTimeSec - (allMinute * 60));
+
+        if (allMinute < 10) {
+            allMinute = '0' + allMinute;
+        }
+
+        if (allSec < 10) {
+            allSec = '0' + allSec;
+        }
+
+        $('.footerPlayer__time')
+            .empty()
+            .html(allMinute + ":" + allSec);
+
+
+
+        $('.footerPlayer__artist')
+            .empty()
+            .html(name);
+
+        $('.footerPlayer__title')
+            .empty()
+            .html(title)
+
+        $('.footerPlayer__img img')
+            .attr('src', 'images/imgSingle/' + img);
+    })
+}
+
 function mainTab() {
     $('.tabsContent__tab').click(function () {
         $('.tabsContent__tab').removeClass('active');
@@ -40,12 +81,24 @@ $('.toggleBtn_js').each(function(indx){
 
         if ($(this).hasClass('active')) {
             $('.toggleBtn_js').removeClass('active');
+            $('.footerPlay_js').removeClass('active');
+            $('.footerPlayer__wrapper').slideUp();
         } else {
             $('.toggleBtn_js').removeClass('active');
+            $('.footerPlay_js').addClass('active');
+            $('.footerPlayer__wrapper').slideDown();
             $(this).addClass('active');
             perem[id].play();
-        }
 
+            var jsonId =$(this).data('id');
+
+            footerPlay(jsonId, id)
+        }
+    })
+
+
+    $('wave').click(function(){
+        alert("sdsd");
     })
 }
 
@@ -97,11 +150,9 @@ function musicPlay() {
     var i=0;
     var n=0;
     $('.SingleResult .waveform').on('DOMSubtreeModified', 'canvas', function (event) {
-        i++;
-        if(i%4==0){
-            n++;
-        }
-        var indx = n;
+        $('.toggleBtn_js').each(function(indx){
+
+            console.log(indx);
 
      //   indx =0;
         perem[indx].on('ready', function () {
@@ -120,6 +171,7 @@ function musicPlay() {
 
             $('.SingleResult__time:eq(' + indx + ')')
                 .empty()
+                .attr('id','id_'+indx)
                 .html(allMinute + ":" + allSec);
 
 
@@ -153,6 +205,8 @@ function musicPlay() {
 
 
         });
+
+        })
 
     })
 
