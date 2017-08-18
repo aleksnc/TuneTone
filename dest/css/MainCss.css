@@ -741,8 +741,6 @@ input[type="text"]::placeholder {
   -webkit-align-items: center;
   -ms-flex-align: center;
   align-items: center; }
-  .SingleResult.parent {
-    display: none; }
   .SingleResult__wrapper {
     position: relative;
     z-index: 2; }

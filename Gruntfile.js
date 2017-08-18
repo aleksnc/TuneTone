@@ -4,7 +4,7 @@ module.exports = function(grunt){
       compile: {
         files: [{
           cwd: 'source',
-          src: ['*.pug'],
+          src: ['*.pug', 'templates/*.pug'],
           dest: 'dest',
           expand: true,
           ext: '.html'
