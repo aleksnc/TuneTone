@@ -241,6 +241,7 @@
 var UrlPath;
 var SoundData;
 var SoundInit = [];
+var idTrack = -1;
 
 $(function () {
     $.getJSON('script/playList.json', function (data) {
@@ -279,6 +280,9 @@ function PageGET() {
 }
 
 function SearchResult() {
+
+    idTrack = -1;
+
     $.get(
         "/templates/_soundTemplate.html",
         onAjaxSuccess
@@ -292,6 +296,11 @@ function SearchResult() {
 }
 
 function singlePage() {
+
+    var getId = window.location.search.substring(1);
+    idTrack = getId.split("=")[1];
+
+
     $.get(
         "/templates/_singlePageTemplate.html",
         onAjaxSuccess
@@ -305,6 +314,9 @@ function singlePage() {
 }
 
 function indexPage() {
+
+    idTrack = -1;
+
     $.get(
         "/templates/_indexTemplate.html",
         onAjaxSuccess
@@ -321,10 +333,18 @@ function createSoundList() {
 
     for (var i = 0; i < countLenght; i++) {
         var SoundId = SoundData[i].id;
-        var CloneParent = $('.SingleResult.parent').clone();
-        CloneParent.find('.toggleBtn_js').data('id', SoundId);
-        CloneParent.find('.waveform').attr('id', 'waveform' + SoundId);
-        CloneParent.removeClass('parent').appendTo('.GETcontent .Singleresult__wrapper');
+        if (SoundData[i].id != idTrack) {
+            var CloneParent = $('.SingleResult.parent').clone();
+            CloneParent.find('.toggleBtn_js').data('id', SoundId);
+            CloneParent.find('.waveform').attr('id', 'waveform' + SoundId);
+            CloneParent.removeClass('parent').appendTo('.GETcontent .Singleresult__wrapper');
+        } else {
+            var SingleSound = $('.singleHeader .SingleResult');
+
+            SingleSound.find('.toggleBtn_js').data('id', SoundId);
+
+            SingleSound.find('.waveform').attr('id', 'waveform' + SoundId);
+        }
     }
 
     $('.SingleResult.parent').remove();
@@ -336,25 +356,38 @@ function AddInfoMusic(i, item) {
 
     var SoundBlock = $('#waveform' + item.id).parents('.SingleResult');
 
-    SoundBlock.addClass('itemId' + item.id);
+    if (item.id != idTrack) {
 
-    SoundBlock.find('.SingleResult__img')
-        .attr('href','/SinglePage.html?id='+item.id);
+        SoundBlock.addClass('itemId' + item.id);
 
-    SoundBlock.find('.SingleResult__img img')
-        .attr('src', 'images/imgSingle/' + item.img);
+        SoundBlock.find('.SingleResult__img')
+            .attr('href', '/SinglePage.html?id=' + item.id);
 
-    SoundBlock.find('.SingleResult__artist')
-        .empty()
-        .html(item.name)
-        .attr('href','/SinglePage.html?id='+item.id);
+        SoundBlock.find('.SingleResult__img img')
+            .attr('src', 'images/imgSingle/' + item.img);
 
-    SoundBlock.find('.SingleResult__title')
-        .empty()
-        .html(item.title)
-        .attr('href','/SinglePage.html?id='+item.id);
+        SoundBlock.find('.SingleResult__artist')
+            .empty()
+            .html(item.name)
+            .attr('href', '/SinglePage.html?id=' + item.id);
 
-    SoundBlock.find('.SingleResult__time').empty();
+        SoundBlock.find('.SingleResult__title')
+            .empty()
+            .html(item.title)
+            .attr('href', '/SinglePage.html?id=' + item.id);
+
+        SoundBlock.find('.SingleResult__time').empty();
+
+    } else{
+        $('.singleHeader__artis')
+            .empty()
+            .html(item.name);
+
+        $('.singleHeader__soundName')
+            .empty()
+            .html(item.title);
+    }
+
 
     SoundInit[i].on('ready', function () {
         var allTimeSec = SoundInit[i].getDuration();
@@ -417,7 +450,7 @@ function PlayPause(isClick, SoundBlock, myID) {
             if (isClick.hasClass('active')) {
                 item.play();
                 var jsonId = isClick.data('id');
-              //  footerPlay(jsonId, id)
+                //  footerPlay(jsonId, id)
             }
 
             item.on('audioprocess', function () {
@@ -459,6 +492,7 @@ function initSound() {
 
 
     $.each(SoundData, function (i, item) {
+
         SoundInit[i] = WaveSurfer.create({
             container: '#waveform' + item.id,
             waveColor: '#828082',
@@ -466,10 +500,10 @@ function initSound() {
             height: 80
         })
 
+
         SoundInit[i].load('music/' + item.realTitle);
 
         AddInfoMusic(i, item);
-
     });
 }
 
@@ -478,28 +512,30 @@ function loadPage(url) {
 }
 
 $(document).ready(function () {
-    window.onpopstate = function(event) {PageGET()}
+    window.onpopstate = function (event) {
+        PageGET()
+    }
 
     PageGET();
     NavigationPlayer();
 
-    $('.inputSend__button').click(function(e){
+    $('.inputSend__button').click(function (e) {
         var uri = 'SearchResult.html';
         history.pushState(null, '', uri);
         PageGET()
     })
 
-    $(document).on('click', '.SingleResult a', function(e){
+    $(document).on('click', '.SingleResult a', function (e) {
         console.log('ok');
-        var uri =$(this).attr('href');
+        var uri = $(this).attr('href');
         e.preventDefault();
         history.pushState(null, '', uri);
         PageGET()
     })
 
-    $(document).on('click', '.mainLogo', function(e){
+    $(document).on('click', '.mainLogo', function (e) {
         console.log('ok');
-        var uri =$(this).attr('href');
+        var uri = $(this).attr('href');
         e.preventDefault();
         history.pushState(null, '', uri);
         PageGET()
