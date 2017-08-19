@@ -250,6 +250,7 @@ $(function () {
 });
 
 function PageGET() {
+
     $('.GETcontent').empty();
     var path = window.location.pathname.split("/");
     var pathName = path[path.length - 1];
@@ -445,7 +446,14 @@ function PlayPause(isClick, SoundBlock, myID) {
         }
 
         if (item.container.id == myID) {
-            console.log(item.container.id);
+
+            $.each(SoundInit, function (j, other) {
+
+                if (other.isPlaying()) {
+                    other.pause();
+                }
+            })
+
 
             if (isClick.hasClass('active')) {
                 item.play();
@@ -484,27 +492,40 @@ function PlayPause(isClick, SoundBlock, myID) {
 /*Скорей всего нужные*/
 
 function initSound() {
-    $('.Singleresult').css(
-        {
-            'height': 0,
-            'overflow': 'hidden'
-        });
+ var Soundlenght =SoundInit.length;
+
+    if( Soundlenght==0) {
+        $('.Singleresult').css(
+            {
+                'height': 0,
+                'overflow': 'hidden'
+            });
+    }
 
 
     $.each(SoundData, function (i, item) {
 
-        SoundInit[i] = WaveSurfer.create({
-            container: '#waveform' + item.id,
-            waveColor: '#828082',
-            progressColor: '#3bd9a3',
-            height: 80
-        })
 
 
-        SoundInit[i].load('music/' + item.realTitle);
+        if( Soundlenght==0) {
+               SoundInit[i] = WaveSurfer.create({
+                   container: '#waveform' + item.id,
+                   waveColor: '#828082',
+                   progressColor: '#3bd9a3',
+                   height: 80
+               });
+        } else{
+        }
 
-        AddInfoMusic(i, item);
-    });
+        console.log(SoundInit[i].drawer.params);
+               SoundInit[i].load('music/' + item.realTitle);
+        
+
+          AddInfoMusic(i, item);
+
+
+       });
+
 }
 
 function loadPage(url) {
