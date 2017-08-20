@@ -379,7 +379,7 @@ function AddInfoMusic(i, item) {
 
         SoundBlock.find('.SingleResult__time').empty();
 
-    } else{
+    } else {
         $('.singleHeader__artis')
             .empty()
             .html(item.name);
@@ -488,13 +488,24 @@ function PlayPause(isClick, SoundBlock, myID) {
 
 }
 
-
 /*Скорей всего нужные*/
+function mainTab() {
+    $('.tabsContent__tab').click(function () {
+        $('.tabsContent__tab').removeClass('active');
+        $('.tabsContent').removeClass('active');
+        $(this).addClass('active');
+        var numTab = $(this).data('tab');
+        $('.' + numTab).addClass('active');
+        return false;
+    })
+}
+
+
 
 function initSound() {
- var Soundlenght =SoundInit.length;
+    var Soundlenght = SoundInit.length;
 
-    if( Soundlenght==0) {
+    if (Soundlenght == 0) {
         $('.Singleresult').css(
             {
                 'height': 0,
@@ -506,25 +517,24 @@ function initSound() {
     $.each(SoundData, function (i, item) {
 
 
+        if (Soundlenght == 0) {
+            SoundInit[i] = WaveSurfer.create({
+                container: '#waveform' + item.id,
+                waveColor: '#828082',
+                progressColor: '#3bd9a3',
+                height: 80
+            });
 
-        if( Soundlenght==0) {
-               SoundInit[i] = WaveSurfer.create({
-                   container: '#waveform' + item.id,
-                   waveColor: '#828082',
-                   progressColor: '#3bd9a3',
-                   height: 80
-               });
-        } else{
+            SoundInit[i].load('music/' + item.realTitle);
+
+        } else {
+
         }
 
-        console.log(SoundInit[i].drawer.params);
-               SoundInit[i].load('music/' + item.realTitle);
-        
-
-          AddInfoMusic(i, item);
+        AddInfoMusic(i, item);
 
 
-       });
+    });
 
 }
 
@@ -539,6 +549,8 @@ $(document).ready(function () {
 
     PageGET();
     NavigationPlayer();
+    mainTab();
+
 
     $('.inputSend__button').click(function (e) {
         var uri = 'SearchResult.html';
@@ -561,4 +573,4 @@ $(document).ready(function () {
         history.pushState(null, '', uri);
         PageGET()
     })
-});
+})
