@@ -35,8 +35,8 @@ ul, ol, li {
 
   &--play {
       font-size: 0;
-      width: 36px;
-      height: 36px;
+      width: 26px;
+      height: 26px;
       background-image: url(../images/play.png);
 
       &.active{
@@ -46,8 +46,8 @@ ul, ol, li {
 
   &--back{
     font-size: 0;
-    width: 36px;
-    height: 36px;
+    width: 26px;
+    height: 26px;
     background-image: url(../images/back.png);
     background-size: 18px;
     background-position: 13px center;
@@ -55,8 +55,8 @@ ul, ol, li {
 
   &--next{
     font-size: 0;
-    width: 36px;
-    height: 36px;
+    width: 26px;
+    height: 26px;
     background-image: url(../images/next.png);
     background-size: 18px;
     background-position: 3px center;
@@ -64,8 +64,8 @@ ul, ol, li {
 
   &--pause{
     font-size: 0;
-    width: 36px;
-    height: 36px;
+    width: 26px;
+    height: 26px;
     background-image: url(../images/pause.png);
 
     &.active{

@@ -2,23 +2,26 @@
     .SingleResult.parent
         a(href='/SinglePage.html?id=').SingleResult__img
             img(src="images/imgSingle/no.jpg")
-        .SingleResult__name
-            a(href='/SinglePage.html?id=').SingleResult__artist No name
-            a(href='/SinglePage.html?id=').SingleResult__title No name
 
-        .btn__wrapper
-            button.btn.btn--play.toggleBtn_js Play
+        .SingleResult__block
+            .SingleResult__name
+                a(href='/SinglePage.html?id=').SingleResult__artist No name
+                |
+                | -
+                |
+                a(href='/SinglePage.html?id=').SingleResult__title No name
 
-        .SingleResult__wave
-            #waveform.waveform
-            .SingleResult__timePassed 00:00
-
-
+            .btn__wrapper
+                button.btn.btn--play.toggleBtn_js Play
+            .SingleResult__wave
+                #waveform.waveform
+                .SingleResult__timePassed 00:00
         .SingleResult__time 00:00
         .SingleResult__tag
             a(href='#') Industrial
             a(href='#') mix
             a(href='#') TaG
+            a(href='#') Radio
 
         .SingleResult__buttons
             button.btn.btn--download

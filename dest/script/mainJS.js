@@ -522,7 +522,7 @@ function initSound() {
                 container: '#waveform' + item.id,
                 waveColor: '#828082',
                 progressColor: '#3bd9a3',
-                height: 80
+                height: 70
             });
 
             SoundInit[i].load('music/' + item.realTitle);
@@ -534,6 +534,15 @@ function initSound() {
         AddInfoMusic(i, item);
 
 
+    });
+
+}
+
+
+function DDownSortBy(){
+    $(document).on('change','select.sortBy__select',function () {
+        var val = $(this).find('option:selected').text();
+        $(this).parents('.sortBy__selectBlock').find('span.sortBy__select').html(val);
     });
 
 }
@@ -550,7 +559,7 @@ $(document).ready(function () {
     PageGET();
     NavigationPlayer();
     mainTab();
-
+    DDownSortBy();
 
     $('.inputSend__button').click(function (e) {
         var uri = 'SearchResult.html';

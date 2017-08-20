@@ -13,6 +13,8 @@
   }
 
   &__img {
+    margin-right: 13px;
+
     img {
       max-width: 90px;
 
@@ -25,24 +27,29 @@
   }
 
   &__name {
+    font-size: 11px;
     color: #fff;
-    display: inline-block;
+    display: block;
     vertical-align: middle;
     min-width: 120px;
+    margin-bottom: 2px;
   }
 
   &__artist {
     color: #fff;
-    display: block;
+    font-weight: bold;
+    display: inline-block;
   }
 
   &__title {
     color: #fff;
-    display: block;
+    display: inline-block;
   }
 
-  &__nav {
-
+  &__block {
+    flex-grow: 1;
+    width: 100%;
+    max-width: 440px;
   }
 
   &__wave {
@@ -86,6 +93,7 @@
     max-width: 90px;
     display: inline-block;
     font-size: 13px;
+    text-align: center;
     vertical-align: middle;
 
     a {

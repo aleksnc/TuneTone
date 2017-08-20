@@ -1,0 +1,89 @@
+.sortBy {
+  display: inline-block;
+  width: 100%;
+  max-width: 33%;
+  text-align: center;
+
+  &__wrapper {
+    font-size: 0;
+    padding: 10px;
+    background-color: #000000;
+  }
+
+  &__link{
+    font-size: 14px;
+    color: #fff;
+  }
+
+  &__title {
+    font-size: 14px;
+    color: #fff;
+    display: inline-block;
+    width: 100%;
+    max-width: 33%;
+  }
+
+  &__selectWrapper{
+    display: inline-block;
+    width: 100%;
+    max-width: 33%;
+    text-align: right;
+  }
+
+  &__selectBlock {
+    margin: 0 auto;
+    position: relative;
+    background-color: $oneColor;
+    border-color: #ddd;
+    color: #333;
+    padding: 5px 15px;
+    display: inline-block;
+    text-align: left;
+    max-width: 155px;
+    width: 100%;
+
+    span.sortBy__select {
+      text-align: center;
+      font-weight: bold;
+      opacity: 1;
+      font-size: 14px;
+      position: relative;
+      padding: 0;
+      &:after{
+        content: "";
+        background-image: url(../images/arrowDown.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+      }
+    }
+
+  }
+
+  &__select {
+    padding: 0 15px;
+    background-color: $oneColor;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    filter: Alpha(Opacity=0);
+    opacity: 0;
+    z-index: 2;
+
+
+    option {
+      font-size: 20px;
+    }
+
+  }
+}
