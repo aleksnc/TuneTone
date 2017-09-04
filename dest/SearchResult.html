@@ -20,9 +20,20 @@
                 <div class="mainMenu__wrapper ">
                   <nav class="mainMenu"><a class="mobileMenu js_mobileMenu" href="#"></a><a class="mainMenu__link" href="#"><span>ABOUT</span></a><a class="mainMenu__link" href="#"><span>NEW MUSIC</span></a><a class="mainMenu__link" href="#"><span>BROWSE</span></a><a class="mainMenu__link" href="#"><span>LICENSE</span></a><a class="mainMenu__link" href="#"><span>BLOG</span></a><a class="mainMenu__link" href="#"><span>FAQ</span></a>
                   </nav>
-                  <div class="mainMenu__signIn">
-                    <div class="mainMenu__userName">User Name</div>
-                    <div class="mainMenu__img"><img src="images/Users/mini200.jpg"/></div><a class="mainMenu__login" href="#">Login</a>
+                  <div class="login__signIn">
+                    <div class="cart__wrapper"><a class="cart" href="/userPage.html">
+                        <div class="cart__count">0</div></a></div>
+                    <div class="login__userName active">
+                      <div class="login_js">Login</div><a class="login__reg" href="/registration.html">Registration</a>
+                    </div><a class="login__userName" href="/userPage.html">User Name</a>
+                    <div class="login__img login_js active"><img class="login__img__user" src="images/user.png"/></div><a class="login__img" href="/userPage.html"><img src="images/Users/mini200.jpg"/></a><a class="login__logout" href="#">Logout</a>
+                    <div class="loginBlock__wrapper">
+                      <div class="loginBlock">
+                        <input class="loginBlock__input" type="text" placeholder="login"/>
+                        <input class="loginBlock__input" type="password" placeholder="password"/>
+                        <button class="loginBlock__btn" value="Login">Login</button><a class="loginBlock__recover"> Recover pass</a>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>

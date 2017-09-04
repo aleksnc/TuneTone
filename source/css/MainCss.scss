@@ -4,22 +4,27 @@
 @import "global";
 
 @import "../blocks/aboutSingle/aboutSingle";
+@import "../blocks/addCart/addCart";
+@import "../blocks/cart/cart";
 @import "../blocks/followBlock/followBlock";
 @import "../blocks/footer/footer";
 @import "../blocks/footerPlayer/footerPlayer";
 @import "../blocks/headerBlock/headerBlock";
 @import "../blocks/indexTitle/indexTitle";
+@import "../blocks/inputSend/inputSend";
+@import "../blocks/login/login";
+@import "../blocks/loginBlock/loginBlock";
 @import "../blocks/mainLogo/mainLogo";
 @import "../blocks/mainMenu/mainMenu";
-@import "../blocks/inputSend/inputSend";
+@import "../blocks/registrationBlock/registrationBlock";
 @import "../blocks/tabsContent/tabsContent";
-
+@import "../blocks/typeLicense/typeLicense";
+@import "../blocks/userPage/userPage";
 
 @import "../blocks/SingleResult/SingleResult";
 @import "../blocks/sortBy/sortBy";
 
 @import "../blocks/singleHeader/singleHeader";
-
 
 .allContent{
   max-width: 1000px;

@@ -1,0 +1,22 @@
+.cart{
+  position: relative;
+  display: block;
+  width: 45px;
+  height: 45px;
+  background-image: url("/images/payCart.png");
+  background-size: contain;
+
+
+  &__wrapper{
+    position: absolute;
+    left: 30px;
+  }
+
+  &__count{
+    font-size: 14px;
+    color: $oneColor;
+    position: absolute;
+    left: 21px;
+    font-weight: bold;
+  }
+}

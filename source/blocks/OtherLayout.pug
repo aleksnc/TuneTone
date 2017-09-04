@@ -1,0 +1,24 @@
+include mixin.pug
+
+doctype !
+
+html(lang="ru")
+    head
+        title Tune-tone: Royalty free music.
+        meta( charset="UTF-8")
+        meta( name="viewport" content="width=device-width, initial-scale=1.0")
+        link( rel="stylesheet" href="css/MainCss.css")
+    body
+        .allContent__wrapper
+            .allContent
+                include headerBlock/headerBlock.pug
+                block content
+
+        footer
+            include ../blocks/footer/footer.pug
+
+    script(rel="script" src="script/jquery-2.2.3.min.js")
+    script(rel="script" src="script/wavesurfer.min.js")
+    script(rel="script" src="script/waveform-playlist.var.js")
+    script(rel="script" src="script/mainJS.js")
+

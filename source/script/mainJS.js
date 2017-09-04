@@ -41,23 +41,7 @@
 //    })
 //}
 //
-//function mainTab() {
-//    $('.tabsContent__tab').click(function () {
-//        $('.tabsContent__tab').removeClass('active');
-//        $('.tabsContent').removeClass('active');
-//        $(this).addClass('active');
-//        var numTab = $(this).data('tab');
-//        $('.' + numTab).addClass('active');
-//        return false;
-//    })
-//}
-//
-//function mobileMenu() {
-//    $('.js_mobileMenu').click(function () {
-//        $(this).siblings('.mainMenu__link').toggleClass('active');
-//        $('.headerBlock__nav').toggleClass('active');
-//    })
-//}
+
 //
 //function toggleBtn() {
 //$('.toggleBtn_js').each(function(indx){
@@ -238,6 +222,8 @@
 //    PageGET()
 //});
 //
+
+
 var UrlPath;
 var SoundData;
 var SoundInit = [];
@@ -427,9 +413,11 @@ function NavigationPlayer() {
             $('.toggleBtn_js').removeClass('active');
             $('.footerPlay_js').removeClass('active');
             $('.footerPlayer__wrapper').slideUp();
+            $('.footer__wrapper').removeClass('active');
         } else {
             $('.toggleBtn_js').removeClass('active');
             $('.footerPlay_js').addClass('active');
+            $('.footer__wrapper').addClass('active');
             $('.footerPlayer__wrapper').slideDown();
             $(this).addClass('active');
         }
@@ -500,8 +488,6 @@ function mainTab() {
     })
 }
 
-
-
 function initSound() {
     var Soundlenght = SoundInit.length;
 
@@ -525,6 +511,7 @@ function initSound() {
                 height: 70
             });
 
+
             SoundInit[i].load('music/' + item.realTitle);
 
         } else {
@@ -533,22 +520,46 @@ function initSound() {
 
         AddInfoMusic(i, item);
 
-
     });
 
 }
 
 
-function DDownSortBy(){
+function dDSelect(){
     $(document).on('change','select.sortBy__select',function () {
         var val = $(this).find('option:selected').text();
         $(this).parents('.sortBy__selectBlock').find('span.sortBy__select').html(val);
+    });
+
+    $(document).on('change','select.addCart__license',function () {
+        var val = $(this).find('option:selected').text();
+        $(this).parents('.addCart__selectBlock').find('span.addCart__license').html(val);
     });
 
 }
 
 function loadPage(url) {
     $categoryProducts.load(url + " .category-products > *");
+}
+
+
+
+function mainTab() {
+    $('.tabsContent__tab').click(function () {
+        $('.tabsContent__tab').removeClass('active');
+        $('.tabsContent').removeClass('active');
+        $(this).addClass('active');
+        var numTab = $(this).data('tab');
+        $('.' + numTab).addClass('active');
+        return false;
+    })
+}
+
+function mobileMenu() {
+    $('.js_mobileMenu').click(function () {
+        $(this).siblings('.mainMenu__link').toggleClass('active');
+        $('.headerBlock__nav').toggleClass('active');
+    })
 }
 
 $(document).ready(function () {
@@ -559,7 +570,7 @@ $(document).ready(function () {
     PageGET();
     NavigationPlayer();
     mainTab();
-    DDownSortBy();
+    dDSelect();
 
     $('.inputSend__button').click(function (e) {
         var uri = 'SearchResult.html';
@@ -582,4 +593,41 @@ $(document).ready(function () {
         history.pushState(null, '', uri);
         PageGET()
     })
+
+
+    $('.login_js').click(function(){
+        console.log('alert');
+        $('.loginBlock__wrapper').toggleClass('active');
+    });
+
+    $('.loginBlock__btn').click(function(){
+        $('.loginBlock__wrapper').toggleClass('active');
+        $('.login__userName').toggleClass('active');
+        $('.login__img').toggleClass('active');
+        $('.login__logout').toggleClass('active');
+    })
+
+    $('.login__logout').click(function(){
+        $('.login__userName').toggleClass('active');
+        $('.login__img').toggleClass('active');
+        $('.login__logout').toggleClass('active');
+    })
+
+
+    $(document).on('click', '.btn--add',function(){
+        $(this).toggleClass('active');
+    })
+
+
+    $(document).on('click','.btn--basket', function(){
+        $('.typeLicense__wrapper').removeClass('active');
+        $(this).find('.typeLicense__wrapper').addClass('active');
+    })
+
+    $(document).on('click','.typeLicense__type', function(){
+        $('.typeLicense__wrapper').removeClass('active');
+        $(this).parents('.typeLicense__wrapper').removeClass('active');
+        return false;
+    })
+
 })

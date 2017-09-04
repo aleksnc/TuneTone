@@ -1,0 +1,53 @@
+.registrationBlock {
+  padding: 15px;
+  background-color: rgba(0, 0, 0, 0.31);
+  display: inline-block;
+  width: 30%;
+  margin-right: 2%;
+  vertical-align: top;
+
+  &--license {
+    width: 68%;
+    margin: 0;
+  }
+  &__wrapper {
+    font-size: 0;
+  }
+
+  &__license{
+    font-size: 16px;
+    height: calc(100% - 370px);
+    overflow-y: auto;
+    color: $oneColor;
+  }
+
+  &__input {
+    margin-bottom: 10px;
+
+    input {
+      width: 100%;
+      padding: 5px;
+      font-size: 17px;
+      color: $twoColor;
+    }
+  }
+
+  &__name {
+    color: $oneColor;
+    font-size: 17px;
+  }
+
+  &__title {
+    font-size: 22px;
+    color: $oneColor;
+  }
+
+  &__btn {
+    width: 100%;
+    padding: 10px 5px;
+    color: #fff;
+    background-color: $twoColor;
+    border: none;
+    cursor: pointer;
+  }
+}

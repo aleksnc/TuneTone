@@ -1,0 +1,13 @@
+.login__signIn
+    include ../cart/cart.pug
+
+    .login__userName.active
+        .login_js Login
+        a.login__reg( href="/registration.html") Registration
+    a.login__userName(href="/userPage.html") User Name
+    .login__img.login_js.active
+        img.login__img__user(src="images/user.png")
+    a.login__img( href="/userPage.html")
+        img(src="images/Users/mini200.jpg")
+    a.login__logout( href="#") Logout
+    include ../loginBlock/loginBlock.pug

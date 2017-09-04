@@ -1,0 +1,36 @@
+.typeLicense{
+  &__wrapper{
+    display: none;
+    border: 2px solid #3bd9a3;
+    background-color: #000;
+    width: 211px;
+    padding: 15px 15px 5px;
+    position: absolute;
+    top: 0;
+    z-index: 6;
+    left: 100%;
+
+    &.active{
+      display: block;
+    }
+  }
+
+  &__type{
+    font-size: 14px;
+    display: block;
+    width: 177px;
+    padding: 3px 10px;
+    border: 1px solid #3bd9a3;
+    color: #fff;
+    background-color: #144937;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: all 0.3s;
+
+    &:hover{
+      background-color: #3bd9a3;
+      border: 1px solid #144937;
+      transition: all 0.3s;
+    }
+  }
+}

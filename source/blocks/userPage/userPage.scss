@@ -1,0 +1,67 @@
+.userPage {
+  &__wrapper {
+    font-size: 0;
+  }
+
+  &__sideBar {
+    display: inline-block;
+    border-right: 2px solid $oneColor;
+    height: calc(100% - 300px);
+    max-width: 200px;
+    width: 100%;
+    vertical-align: top;
+    padding: 10px 0;
+
+  }
+
+  &__link {
+    color: $oneColor;
+    font-size: 16px;
+    letter-spacing: 5px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__list {
+    display: block;
+    margin-bottom: 10px;
+    padding-left: 30px;
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-size: 22px;
+
+    &--payCart {
+      background-image: url("/images/shopCart.png");
+    }
+
+    &--cart {
+      background-image: url("/images/MyCart.png");
+    }
+
+    &--like{
+      background-image: url("/images/like.png");
+    }
+
+    &--history {
+      background-image: url("/images/history.png");
+    }
+    &--settings{
+      background-image: url("/images/settings.png");
+    }
+
+
+  }
+
+  &__content {
+    background-color: rgba(0, 0, 0, 0.20);
+    display: inline-block;
+    height: calc(100% - 300px);
+    max-width: calc(100% - 200px);
+    width: 100%;
+    overflow-y: auto;
+    padding: 10px;
+
+  }
+}
